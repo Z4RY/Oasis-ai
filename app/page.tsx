@@ -2,10 +2,7 @@
 
 import Link from "next/link"
 import { Keyboard, Target, Zap, Award, TrendingUp, PenTool } from "lucide-react"
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/all"
 
-gsap.registerPlugin(ScrollTrigger)
 
 export default function Page() {
   return (
