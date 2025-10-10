@@ -228,9 +228,15 @@ export default function WritePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-card border-b border-border sticky top-0 z-50 shadow-minimal">
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <SmartLogo />
+      <header
+        className={`sticky top-0 z-50 transition-colors ${"bg-card/80 backdrop-blur border-b" 
+        }`}
+      >
+        <div className="mx-auto max-w-6xl px-6 md:px-8 h-16 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2">
+            {/* brand mark kept minimal */}
+            <span className="text-lg md:text-xl font-medium">Oasis</span>
+          </Link>
           <nav className="hidden md:flex items-center space-x-8">
             <Link href="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
               Dashboard
@@ -306,16 +312,16 @@ export default function WritePage() {
               <Button
                 onClick={generateTopic}
                 disabled={generating}
-                className="minimal-button rounded-full px-8 py-3"
+                className="minimal-button rounded-full border px-8 py-3"
               >
-                <Zap className="w-4 h-4 mr-2" />
+                <Zap className=" w-4 h-4 mr-2" />
                 {generating ? "Generating Topic..." : "Generate Essay Topic"}
               </Button>
 
               {/* API Status Info */}
               <div className="mt-8 p-4 bg-secondary rounded-lg border border-border">
                 <p className="text-sm text-muted-foreground">
-                  <strong>Note:</strong> This feature uses OpenAI API for topic generation. If you're experiencing
+                  <strong>Note:</strong> This feature uses Gemini API for topic generation. If you're experiencing
                   issues, please check your API key configuration.
                 </p>
               </div>

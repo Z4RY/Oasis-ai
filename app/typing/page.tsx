@@ -137,7 +137,11 @@ export default function TypingTestPage() {
       let className = "text-muted-foreground"
 
       if (index < userInput.length) {
-        className = userInput[index] === char ? "text-foreground bg-secondary" : "text-destructive bg-destructive/10"
+        if (userInput[index] === char) {
+          className = "text-foreground bg-secondary"
+        } else {
+          className = "text-red-600 bg-destructive/10" // Make wrong character red
+        }
       } else if (index === userInput.length) {
         className = "text-foreground bg-secondary border-l-2 border-foreground"
       }
@@ -153,7 +157,29 @@ export default function TypingTestPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-card border-b border-border sticky top-0 z-50 shadow-minimal">
+      <header
+        className={`sticky top-0 z-50 transition-colors ${"bg-card/80 backdrop-blur border-b" 
+        }`}
+      >
+        <div className="mx-auto max-w-6xl px-6 md:px-8 h-16 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2">
+            {/* brand mark kept minimal */}
+            <span className="text-lg md:text-xl font-medium">Oasis</span>
+          </Link>
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link href="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
+              Dashboard
+            </Link>
+            <Link href="/write" className="text-muted-foreground hover:text-foreground transition-colors">
+              Write
+            </Link>
+            <Link href="/profile" className="text-foreground font-medium">
+              Profile
+            </Link>
+          </nav>
+        </div>
+      </header>
+      {/* <header className="bg-card border-b border-border sticky top-0 z-50 shadow-minimal">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <SmartLogo />
           <nav className="hidden md:flex items-center space-x-8">
@@ -168,7 +194,7 @@ export default function TypingTestPage() {
             </Link>
           </nav>
         </div>
-      </header>
+      </header> */}
 
       <div className="container mx-auto px-6 py-8 max-w-4xl">
         <div className="text-center mb-8">

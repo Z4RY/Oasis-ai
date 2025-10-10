@@ -208,9 +208,14 @@ export default function ProfilePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b border-border sticky top-0 z-50 bg-card/80 backdrop-blur-sm shadow-minimal">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <SmartLogo />
+      <header
+        className={`sticky top-0 z-50 transition-colors ${"bg-card/80 backdrop-blur border-b" 
+        }`}
+      >
+        <div className="mx-auto max-w-6xl px-6 md:px-8 h-16 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2">
+            <span className="text-lg md:text-xl font-medium">Oasis</span>
+          </Link>
           <nav className="hidden md:flex items-center space-x-6">
             <Link href="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
               Dashboard

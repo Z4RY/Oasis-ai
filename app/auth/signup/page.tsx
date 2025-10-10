@@ -78,7 +78,7 @@ export default function SignUpPage() {
                 <path d="M2 12l4-4v3h6v-3l4 4-4 4v-3H6v3l-4-4z" />
               </svg>
             </div>
-            <span className="text-2xl font-light text-foreground">Oasis</span>
+            <span className="text-2xl font-light text-foreground font-medium">Oasis</span>
           </Link>
         </div>
 
@@ -177,13 +177,12 @@ export default function SignUpPage() {
             </form>
 
             <div className="mt-6">
-              <div className="relative">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-border" />
-                </div>
-                <div className="relative flex justify-center text-sm">
-                  <span className="px-2 bg-card text-muted-foreground">Or continue with</span>
-                </div>
+              <div className="relative flex items-center">
+                <div className="flex-grow border-t border-border" />
+                <span className="mx-4 px-2 bg-card text-muted-foreground text-sm whitespace-nowrap">
+                  Or continue with
+                </span>
+                <div className="flex-grow border-t border-border" />
               </div>
 
               <Button

@@ -126,9 +126,15 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-card border-b border-border sticky top-0 z-50 shadow-minimal">
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <SmartLogo />
+      <header
+        className={`sticky top-0 z-50 transition-colors ${"bg-card/80 backdrop-blur border-b" 
+        }`}
+      >
+        <div className="mx-auto max-w-6xl px-6 md:px-8 h-16 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2">
+            {/* brand mark kept minimal */}
+            <span className="text-lg md:text-xl font-medium">Oasis</span>
+          </Link>
           <nav className="hidden md:flex items-center space-x-8">
             <Link href="/dashboard" className="text-foreground font-medium">
               Dashboard
@@ -227,7 +233,7 @@ export default function DashboardPage() {
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <Link href="/write">
-                    <Button className="w-full h-20 bg-foreground text-background hover:bg-foreground/90 flex flex-col items-center justify-center space-y-2 rounded-lg transition-colors">
+                    <Button className="w-full h-20 bg-foreground text-background border hover:bg-foreground/90 flex flex-col items-center justify-center space-y-2 rounded-lg transition-colors">
                       <Plus className="w-6 h-6" />
                       <span>Start New Essay</span>
                     </Button>
@@ -337,7 +343,7 @@ export default function DashboardPage() {
                     <p className="text-xs text-muted-foreground">Target: 300-400 words • Difficulty: Intermediate</p>
                   </div>
                   <Button className="w-full bg-foreground text-background hover:bg-foreground/90 rounded-full transition-colors">
-                    Accept Challenge
+                    Comming Soon.....
                   </Button>
                 </div>
               </CardContent>
